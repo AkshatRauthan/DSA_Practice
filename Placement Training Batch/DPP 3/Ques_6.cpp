@@ -25,6 +25,7 @@ int gcdIteratiive(int a, int b){
     return b;
 }
 int gcdRecursive(int a, int b){
+    if (a == 1 || b == 1) return 1;
     if (!a) return b;
     return gcd(b%a, a);
 }
@@ -35,6 +36,6 @@ int main(){
     cin>>a>>b;
 
     cout<<"\nThe GCD of "<<a<<" and "<<b<<" is : \n";
-    cout<<gcdRecursive(a,b)<<"\n\n";
+    cout<<gcdRecursive(min(a,b), max(a,b))<<"\n\n";
     return 0;
 }
